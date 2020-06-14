@@ -5,8 +5,14 @@ export default function Header (){
   return(
     <header>
       <h1>
-        weather app
+        NASEEM's Weather 
       </h1>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About us</li>
+        </ul>
+      </nav>
     </header>
   );
 }

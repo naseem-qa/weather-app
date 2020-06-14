@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import useFetch from '../hooks/useFetch.js';
+import './style.scss';
+
+
 
 function Location (props){
   const [location, setLocation] = useState({});
@@ -58,19 +61,26 @@ function Location (props){
 
   return(
     <>
-      <h3 onClick={showState}>**********</h3>
-      <form onSubmit={getData}>
-        <input name='city' />
-        <button type='submit'>submit</button>
-      </form>
-      <div>
+      {/* <h3 onClick={showState}>**********</h3> */}
+      <section className="search">
+        <form onSubmit={getData}>
+          <label>TYPE THE NAME OF THE CITY :</label>
+          <input name='city' />
+          <button type='submit'>submit</button>
+        </form>
+      </section>
+      <section className="result"> 
         {weather.map((data,idx)=>(
-          <p>
-            {data.forecast}{data.time}
-          </p>
+          <div className="card">
+            <img src={require(`../../asset/${data.icon}.png`)} alt={data.icon} />
+            <div className="info">
+              <h3>{data.time}</h3>
+              <p>{data.forecast}</p>
+            </div>
+          </div>
         ))
         }
-      </div>
+      </section>
     </>
   );
 }
