@@ -1,11 +1,11 @@
 import React from 'react';
- 
+import './header.scss';
 
 export default function Header (){
   return(
     <header>
-      <h1>
-        NASEEM's Weather 
+      <h1 className='logo'>
+        NASEEM's <span>Weather</span>  
       </h1>
       <nav>
         <ul>

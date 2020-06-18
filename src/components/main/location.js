@@ -62,14 +62,17 @@ function Location (props){
   return(
     <>
       {/* <h3 onClick={showState}>**********</h3> */}
-      <section className="search">
-        <form onSubmit={getData}>
-          <label>TYPE THE NAME OF THE CITY :</label>
-          <input name='city' />
+      <section className='backImg'>
+        <img src={require('../../asset/main.jpg')} />
+        <a href='#search'>LET'S GET STARTED</a>
+      </section>
+      <section className="search" id='search'>
+        <form onSubmit={getData} action='#result'>
+          <input name='city' placeholder="TYPE THE NAME OF THE CITY :" />
           <button type='submit'>submit</button>
         </form>
       </section>
-      <section className="result"> 
+      <section className="result" id='result'> 
         {weather.map((data,idx)=>(
           <div className="card">
             <img src={require(`../../asset/${data.icon}.png`)} alt={data.icon} />
