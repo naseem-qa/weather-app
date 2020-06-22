@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/naseem-qa/weather-app",
   "dependencies": {
+    "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",

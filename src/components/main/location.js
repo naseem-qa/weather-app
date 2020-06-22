@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useFetch from '../hooks/useFetch.js';
+
+import $ from 'jquery';
 import './style.scss';
 
 
@@ -33,6 +35,8 @@ function Location (props){
       });
   };
 
+
+
   const getWeather =(cityInfo) =>{
     let lat = cityInfo.latitude;
     let lng = cityInfo.longitude;
@@ -53,6 +57,27 @@ function Location (props){
       });
   };
 
+  const getTime = () =>{
+  
+    let h = new Date().getHours();
+    let m = new Date().getMinutes();
+    let s = new Date().getSeconds();
+    
+    $('.hour').html(h);
+    $('.minute').html(m);
+    $('.second').html(s);
+
+    // let r = parseInt(s) * 1;
+    // let g = parseInt(s) * 3;
+    // let b = parseInt(s) * 5;
+
+    // $('.search').css('background', `rgb(${r},${g},${b})`);
+  };
+
+  useEffect(()=>{
+    let interval = setInterval(getTime, 1000);
+  },[]);
+
   const showState = () => {
   // .then(data => console.log('tessst', data));
     console.log('__STATE__ 2', location);
@@ -67,6 +92,15 @@ function Location (props){
         <a href='#search'>LET'S GET STARTED</a>
       </section>
       <section className="search" id='search'>
+        <div className='clock-box' test={$('.clock-box').html()}>
+          <h2>THE TIME NOW IS</h2>
+          <div className='clock'>
+            <div><span className='hour'>00</span><span>Hours</span></div>
+            <div><span className='minute'>00</span><span>Minutes</span></div>
+            <div><span className='second'>00</span><span>Seconds</span></div>
+          </div>
+          {/* <div className='date'>DD - MM - YYYY</div> */}
+        </div>
         <form onSubmit={getData} action='#result'>
           <input name='city' placeholder="TYPE THE NAME OF THE CITY :" />
           <button type='submit'>submit</button>
