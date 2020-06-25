@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap");
 html {
     scroll-behavior: smooth;
 }
@@ -35,7 +35,7 @@ html {
 
 .search {
     // background-color: green;
-    border: solid;
+    // border: solid;
     height: 45.5vmax;
     padding: 5% 0%;
     position: relative;
@@ -52,13 +52,13 @@ html {
         transform: translate(-50%, -50%);
     }
     &:before {
-        background: #18379c;
-        background: linear-gradient(left, #2d80df, #18379c, #2d80df);
+        background: #2d80df;
+        // background: linear-gradient(left, #2d80df, #18379c, #2d80df);
         // top: 192px;
     }
     &:after {
-        background: #18379c;
-        background: linear-gradient(left, #2d80df, #18379c, #2d80df);
+        background: #2d80df;
+        // background: linear-gradient(left, #2d80df, #18379c, #2d80df);
         // top: 191px;
     }
 
@@ -66,15 +66,18 @@ html {
         // border: solid;
         position: absolute;
         left: 50%;
-        top:30%;
-        transform: translate(-50%,-50%);
-        font-family: "Open Sans", sans-serif;
+        top: 30%;
+        transform: translate(-50%, -50%);
+        font-family: "Oxanium", cursive;
+        
         h2 {
             // border: solid;
+            text-shadow:0px 0px 7px  #ec0062;
+            color: #fff;
+            font-family: "Oxanium", cursive;
             text-align: center;
             padding: 3%;
             font-size: 3vmax;
-
         }
         .clock {
             display: flex;
@@ -105,14 +108,14 @@ html {
                 }
             }
 
-            div:last-child{
-                span{
+            div:last-child {
+                span {
                     background-color: #ff006a;
                 }
                 span:nth-child(2) {
                     background-color: #ec0062;
                 }
-            } 
+            }
         }
     }
     form {
@@ -138,7 +141,7 @@ html {
         color: #fff;
         display: block;
         float: left;
-        font-size: 1.5vmax ;
+        font-size: 1.5vmax;
         font-weight: 400;
         height: 3vmax;
         margin: 0;
@@ -154,7 +157,6 @@ html {
         &:focus {
             animation: glow 800ms ease-out infinite alternate;
             background: #fff;
-            // background: linear-gradient(#333933, #222922);
             border-color: #ec0062;
             color: #ec0062;
             outline: none;
@@ -165,10 +167,17 @@ html {
         &:focus:-moz-placeholder {
             color: #efe;
         }
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+            -webkit-transition-delay: 9999s;
+        }
     }
     button {
         background: #ec0062;
-        border: 1px solid ;
+        border: 1px solid;
         border-radius: 0 5px 5px 0;
         color: #fff;
         display: block;
@@ -185,7 +194,6 @@ html {
         &:hover,
         &:focus {
             background: #fff;
-            // background: linear-gradient(#393939, #292929);
             color: #ec0062;
             outline: none;
         }
@@ -197,24 +205,22 @@ html {
 
 @keyframes glow {
     0% {
-        border-color: #ec0062;
-        box-shadow: 0 0 5px rgba(236, 0, 0, 0.2), inset 0 0 5px rgba(236, 0, 0, 0.1), 0 2px 0 #500021;
+        border-color: #fa0000;
+        box-shadow: 0 0 5px rgba(255, 0, 0, 0.4), inset 0 0 5px rgba(255, 0, 0, 0.3), 0 2px 0 #fa0000;
     }
     100% {
         border-color: #ff006a;
-        box-shadow: 0 0 20px rgba(255, 0, 106, 0.6), inset 0 0 10px rgba(255, 0, 106, 0.4), 0 2px 0 #500021;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), inset 0 0 10px rgba(255, 0, 0, 0.6), 0 2px 0 #fa0000;
     }
 }
-// .ie .webdesigntuts-workshop input {
-// 	line-height: 40px;
-// }
 
 .result {
-    // border: solid;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 10%;
+
 
     .card {
         text-align: center;

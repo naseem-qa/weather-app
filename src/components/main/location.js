@@ -86,8 +86,7 @@ function Location (props){
 
   return(
     <>
-      {/* <h3 onClick={showState}>**********</h3> */}
-      <section className='backImg'>
+      <section className='backImg'id='home'>
         <img src={require('../../asset/main.jpg')} />
         <a href='#search'>LET'S GET STARTED</a>
       </section>
@@ -101,7 +100,7 @@ function Location (props){
           </div>
           {/* <div className='date'>DD - MM - YYYY</div> */}
         </div>
-        <form onSubmit={getData} action='#result'>
+        <form onSubmit={getData} >
           <input name='city' placeholder="TYPE THE NAME OF THE CITY :" />
           <button type='submit'>submit</button>
         </form>

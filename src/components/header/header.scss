@@ -1,27 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@700&family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 *{
     font-family: 'Open Sans', sans-serif;
 }
 header{
-    background-color: red;
+    // background-color: #cfeef0ea;
     // border: solid;
+    font-family: 'Fjalla One', sans-serif;
     position: fixed;
     height: 6.6vmax;
     width: 100%;
-    color: rosybrown;
+    color: #3b5bb1;
+    z-index: 99;
 
 
-    .logo{
+    img{
         // border: solid;
-        width: fit-content;
-        font-size: 3vmax;
         position: absolute;
-        left: 2vmax;
-        span{
-            display: block;
-            font-size: 2.5vmax ;
-        }
+        left: 0.5vmax;
+        width: 12vmax;
+        height: 6vmax;
     }
 
     nav{
@@ -42,9 +42,41 @@ header{
                 display: inline-block;
                 margin: 0 5%;
                 font-size: 1.5vmax;
+
+                a {
+                    --spacing: 1em;
+                    color: #3b5bb1;
+                    padding: calc(var(--spacing) / 4) var(--spacing);
+                    position: relative;
+                    text-decoration: none;
+        
+                    &:after {
+                      content: "";
+                      position: absolute;
+                      bottom: 0;
+                      color: #ec0062;
+                      left:  var(--spacing);
+                      right:  var(--spacing);
+                      height: 2px;
+                      background: currentColor;
+                      transform: scaleX(0);
+                      transition: transform 300ms ease-in-out;
+                    }
+                    &:hover::after {
+                      transform: scaleX(1);
+                    }
+                  }
+        
             }
         }
     }
+}
+
+.nav-scrolled{
+    background-color: #cfeef0ea;
+    transition: all 1000ms;
+    box-shadow: 0 0px 10px #000000;
+    z-index: 99;
 }
 
 

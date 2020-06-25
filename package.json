@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/naseem-qa/weather-app/issues"
   },
-  "homepage": "https://github.com/naseem-qa/weather-app",
+  "homepage": "/",
   "dependencies": {
     "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",

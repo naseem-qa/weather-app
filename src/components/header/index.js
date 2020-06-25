@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './header.scss';
 
 export default function Header (){
+  useEffect(()=>{
+    const header = document.querySelector('header');
+    const sectionOne = document.querySelector('.backImg');
+
+    const sectionOneOptions = {
+      rootMargin: '-500px 0px 0px 0px',
+    };
+
+    const sectionOneObserver = new IntersectionObserver(function (
+      entries,
+      sectionOneObserver,
+    ) {
+
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          header.classList.add('nav-scrolled');
+        } else {
+          header.classList.remove('nav-scrolled');
+        }
+      });
+    }, sectionOneOptions);
+
+    sectionOneObserver.observe(sectionOne);
+
+  });
   return(
     <header>
-      <h1 className='logo'>
-        NASEEM's <span>Weather</span>  
-      </h1>
+      <img  src={require(`../../asset/logo.png`)} />
       <nav>
         <ul>
-          <li>Home</li>
-          <li>About us</li>
+          <li><a href='#home'>Home</a></li>
+          <li><a href='#contactUs'>Contact Us</a></li>
         </ul>
       </nav>
     </header>
