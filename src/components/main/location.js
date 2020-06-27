@@ -17,9 +17,9 @@ function Location (props){
     e.preventDefault();
     console.log('cityName',e.target.city.value);
     let cityName = e.target.city.value;
-    fetch('http://localhost:3030/location', {
+    fetch('https://hopeful-jang-acb49e.netlify.app/location', {
       method: 'POST',
-      mode: 'cors',
+      mode: 'no-cors',
       cache: 'no-cache',
       headers: new Headers({
         'Content-Type': 'application/json',
@@ -40,9 +40,9 @@ function Location (props){
   const getWeather =(cityInfo) =>{
     let lat = cityInfo.latitude;
     let lng = cityInfo.longitude;
-    fetch('http://localhost:3030/weather', {
+    fetch('https://hopeful-jang-acb49e.netlify.app/weather', {
       method: 'POST',
-      mode: 'cors',
+      mode: 'no-cors',
       cache: 'no-cache',
       headers: new Headers({
         'Content-Type': 'application/json',
